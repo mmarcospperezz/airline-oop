@@ -12,6 +12,37 @@ public class Airline {
         this.flights = flights;
     }
 
+    public void showFlights() {
+        for (Flight flight : flights) {
+            flight.showInfo();
+        }
+    }
+
+    public void showFlightsFromOrigin(String origin) {
+        for (Flight flight : flights) {
+            if (flight.getOrigin().equals(origin)) {
+                flight.showInfo();
+            }
+        }
+
+    }
+
+    public Flight findFlight(int flightNumber) {
+        for (Flight flight : flights) {
+            if (flight.getFlightNumber() == flightNumber) {
+                return flight;
+            }
+        }
+        return null;
+    }
+
+    public void showPassengerFlights(String nif) {
+        for(Flight flight : flights){
+            flight.showPassengersNif(nif);
+        }
+    }
+
+
     public String getName() {
         return name;
     }
