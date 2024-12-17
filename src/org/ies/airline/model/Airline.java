@@ -42,6 +42,17 @@ public class Airline {
         }
     }
 
+    public Integer getPassengerSeat(int flightNumber, String nif){
+         Flight flight = findFlight(flightNumber);
+         if(flight != null){
+             Passenger passenger = flight.findPassenger(nif);
+             if(passenger != null){
+                 return passenger.getSeatNumber();
+             }
+         }
+            return null;
+    }
+
 
     public String getName() {
         return name;
