@@ -53,6 +53,18 @@ public class Airline {
             return null;
     }
 
+    public void updateSeatNumber(int flightNumber, String nif, int seatNumber){
+        Flight flight = findFlight(flightNumber);
+        if (flight == null){
+            System.out.println("Error: El vuelo con número " + flightNumber + " no existe.");
+
+        } else {
+           Passenger passenger = flight.findPassenger(nif);
+           passenger.setSeatNumber(seatNumber);
+        }
+
+    }
+
 
     public String getName() {
         return name;
